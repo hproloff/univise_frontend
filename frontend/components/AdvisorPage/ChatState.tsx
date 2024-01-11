@@ -1,8 +1,7 @@
-// components/AdvisorPage/ChatState.tsx
+import React from 'react';
 import { Box, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person'; // Human icon
 import AndroidIcon from '@mui/icons-material/Android'; // Robot icon
-import React from 'react';
 import Header from './Header';
 import AdvisorFooter from './AdvisorFooter';
 import CapabilitiesPopup from './CapabilitiesPopup';
@@ -22,7 +21,7 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      <Header onOpenCapabilities={openPopup} />
+      <Header />
 
       {/* Chat history display */}
       <Box sx={{ flexGrow: 1, overflowY: 'auto', padding: 4, marginTop: '15vh', marginBottom: '15vh' }}>
@@ -56,6 +55,7 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
         question={currentQuestion}
         setQuestion={setCurrentQuestion}
         handleSendClick={handleSendClick}
+        onOpenCapabilities={openPopup} // Passing the prop to AdvisorFooter
       />
 
       <CapabilitiesPopup open={isPopupOpen} onClose={closePopup} />

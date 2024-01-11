@@ -13,14 +13,33 @@
     height: 15vh;
     display: flex;
     align-items: center;
-    background-color: lightgrey;
+    background-color: #ffdddd;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0 5%;
     box-sizing: border-box;
+    gap: 50px; /* Add separation between elements */
 }
+
+.advisor-footer-input {
+    border-radius: 50px; /* More oval shape */
+    border: 2px solid black; /* Thicker black outline */
+    background-color: white; /* White background */
+    outline: none; /* Remove outline */
+  }
+
+  .advisor-footer-input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border: 2px solid transparent; /* Set to transparent or match with the footer background */
+  }
+  .advisor-footer-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border: 2px solid black; /* Maintain the border on hover */
+    border-radius: 50px; /* More oval shape */
+  }
+  .advisor-footer-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: 2px solid black; /* Maintain the border when focused */
+  }
 
 /* Header Styles */
 .advisor-header {
@@ -39,10 +58,20 @@
   
 
   
-  .capabilities-button {
-    border-radius: 50px;
-    color: red;
-    border-color: red;
+.capabilities-button {
+    font-size: 1.1rem; /* Larger font size */
+    padding: 14px 22px; /* Increase padding to make the button larger */
+    font-family: 'Roboto', sans-serif;
+    background: none;
+    border: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 100px; /* Make it oval-shaped */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Change as needed */
+        border-color: rgb(0, 0, 0)
+      }
   }
 
   /* CapabilitiesPopup Styles */
