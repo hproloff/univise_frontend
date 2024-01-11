@@ -1,4 +1,5 @@
 /* Advisor Page Background */
+
 .advisor-page {
     background-color: #ffdddd; /* Light red background */
 }
@@ -50,12 +51,9 @@
     background-color: white;
     padding: 0 2%;
     box-sizing: border-box;
+    background-color: #ffdddd; /* Light red background */
+
   }
-  
-  .home-icon {
-    color: red;
-  }
-  
 
   
 .capabilities-button {
@@ -68,10 +66,10 @@
     font-weight: bold;
     border-radius: 100px; /* Make it oval-shaped */
     transition: background-color 0.3s; /* Smooth transition for background color */
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.1); /* Change as needed */
-        border-color: rgb(0, 0, 0)
-      }
+  }
+  .capabilities-button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Change as needed */
+    border-color: rgb(0, 0, 0);
   }
 
   /* CapabilitiesPopup Styles */
@@ -118,4 +116,14 @@
     font-weight: bold;
     font-size: 1.1rem;
   }
-  
+  .send-button {
+    color: black; /* Set color to black */
+  }
+  .profile-icon {
+    color: black; /* Set color to black */
+    /* ... other existing styles ... */
+  }
+  .home-icon {
+    color: black; /* Set color to black */
+    /* ... other existing styles ... */
+  }
