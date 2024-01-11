@@ -1,7 +1,8 @@
-import { Box, IconButton, Typography } from '@mui/material';
+import React from 'react';
+import { Box, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import CapabilitiesContent from './CapContent';
-
+import '../../styles/AdvisorPage.css'; // Import the stylesheet
 
 type CapabilitiesPopupProps = {
   open: boolean;
@@ -14,29 +15,11 @@ const CapabilitiesPopup: React.FC<CapabilitiesPopupProps> = ({ open, onClose }) 
   return (
     <>
       {/* Overlay */}
-      <Box sx={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        zIndex: 1000,
-      }} />
+      <Box className="capabilities-overlay" />
 
       {/* Pop-up */}
-      <Box sx={{
-        position: 'fixed',
-        top: '10%',
-        left: '10%',
-        width: '80%',
-        height: '80%',
-        backgroundColor: 'white',
-        borderRadius: '10px',
-        zIndex: 1001,
-        // Add more styling as needed
-      }}>
-        <IconButton onClick={onClose} sx={{ position: 'absolute', top: 0, right: 0 }}>
+      <Box className="capabilities-popup">
+        <IconButton onClick={onClose} className="close-icon">
           <CloseIcon />
         </IconButton>
         <CapabilitiesContent />

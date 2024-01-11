@@ -1,0 +1,23 @@
+{
+    "capabilities": [
+      {
+        "title": "Capability 1",
+        "description": "Coming Soon"
+      },
+      {
+        "title": "Capability 2",
+        "description": "Coming Soon"
+      }
+    ],
+    "limitations": [
+      {
+        "title": "Limitation 1",
+        "description": "Coming Soon"
+      },
+      {
+        "title": "Limitation 2",
+        "description": "Coming Soon"
+      }
+    ]
+  }
+  

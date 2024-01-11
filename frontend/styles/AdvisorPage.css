@@ -1,0 +1,92 @@
+/* Advisor Page Background */
+.advisor-page {
+    background-color: #ffdddd; /* Light red background */
+}
+
+/* Styling for Buttons */
+.advisor-page-button {
+    border-radius: 50px; /* Very rounded, oval shape */
+    /* Add other button styles here (color, padding, border, etc.) */
+}
+
+.advisor-footer {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: lightgrey;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+.advisor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+    background-color: white;
+    padding: 0 2%;
+    box-sizing: border-box;
+  }
+  
+  .home-icon {
+    color: red;
+  }
+  
+
+  
+  .capabilities-button {
+    border-radius: 50px;
+    color: red;
+    border-color: red;
+  }
+
+  /* CapabilitiesPopup Styles */
+.capabilities-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+.capabilities-popup {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1001;
+  }
+  
+.close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .capabilities-content {
+    padding: 2rem;
+  }
+  
+  .content-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .content-item {
+    text-align: center;
+  }
+  
+  .item-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  

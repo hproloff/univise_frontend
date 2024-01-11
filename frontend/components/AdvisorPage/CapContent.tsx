@@ -1,49 +1,42 @@
-// components/AdvisorPage/CapabilitiesContent.tsx
-import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { Box, Grid, Typography } from '@mui/material';
+import content from '../../data/capabilitiesContent.json'; // Adjust the path as necessary
+import '../../styles/AdvisorPage.css'; // Import the stylesheet
 
 const CapabilitiesContent: React.FC = () => {
   return (
-    <Box sx={{ padding: 2 }}>
-      <Typography variant="h6" sx={{ textAlign: 'center', marginBottom: 2 }}>
+    <Box className="capabilities-content">
+      <Typography variant="h6" className="content-title">
         Capabilities
       </Typography>
 
       <Grid container spacing={2}>
         {/* Capabilities */}
-        <Grid item xs={6} sx={{ textAlign: 'center' }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
-            Capability 1
-          </Typography>
-          <Typography>Coming Soon</Typography>
-        </Grid>
-        <Grid item xs={6} sx={{ textAlign: 'center' }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
-            Capability 2
-          </Typography>
-          <Typography>Coming Soon</Typography>
-        </Grid>
+        {content.capabilities.map((capability, index) => (
+          <Grid item xs={6} key={index} className="content-item">
+            <Typography variant="subtitle1" className="item-title">
+              {capability.title}
+            </Typography>
+            <Typography>{capability.description}</Typography>
+          </Grid>
+        ))}
 
         {/* Separator - Limitations Title */}
-        <Grid item xs={12} sx={{ textAlign: 'center' }}>
-          <Typography variant="h6" sx={{ marginTop: 2, marginBottom: 2 }}>
+        <Grid item xs={12} className="content-title">
+          <Typography variant="h6">
             Limitations
           </Typography>
         </Grid>
 
         {/* Limitations */}
-        <Grid item xs={6} sx={{ textAlign: 'center' }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
-            Limitation 1
-          </Typography>
-          <Typography>Coming Soon</Typography>
-        </Grid>
-        <Grid item xs={6} sx={{ textAlign: 'center' }}>
-          <Typography variant="subtitle1" sx={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
-            Limitation 2
-          </Typography>
-          <Typography>Coming Soon</Typography>
-        </Grid>
+        {content.limitations.map((limitation, index) => (
+          <Grid item xs={6} key={index} className="content-item">
+            <Typography variant="subtitle1" className="item-title">
+              {limitation.title}
+            </Typography>
+            <Typography>{limitation.description}</Typography>
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );

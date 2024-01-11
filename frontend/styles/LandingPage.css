@@ -1,0 +1,33 @@
+/* AdvisorFooter Styles */
+.advisor-footer {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: lightgrey;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+  
+  .advisor-footer-icon {
+    color: black;
+    font-size: 250%;
+    margin-right: 4%;
+  }
+  
+  .advisor-footer-input {
+    border-radius: 50px;
+    height: 60%;
+    width: 85%;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0 24px;
+  }
+  
+  .send-button {
+    color: red;
+  }
+  
