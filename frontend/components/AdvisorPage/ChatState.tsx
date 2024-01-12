@@ -17,22 +17,23 @@ interface ChatStateProps {
   chatHistory: ChatMessage[];
   currentQuestion: string;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<string>>;
-  handleSendClick: () => void;
 }
 
-const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, setCurrentQuestion, handleSendClick }) => {
+const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, setCurrentQuestion }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [localChatHistory, setLocalChatHistory] = useState<ChatMessage[]>(chatHistory);
 
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
 
-  const handleSamplePrompt = async (prompt: string) => {
-    const updatedChatHistory = [...localChatHistory, { type: 'question', text: prompt }];
+  const handleSendClick = async () => {
+    if (!currentQuestion.trim()) return; // Prevent sending empty messages
+
+    const updatedChatHistory = [...localChatHistory, { type: 'question', text: currentQuestion }];
     setLocalChatHistory(updatedChatHistory);
-  
+
     try {
-      const response = await getResponse(prompt);
+      const response = await getResponse(currentQuestion);
       if (response) {
         updatedChatHistory.push({ type: 'response', text: response });
       } else {
@@ -42,8 +43,14 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
       console.error('Error fetching response:', error);
       updatedChatHistory.push({ type: 'response', text: 'Error fetching response.' });
     }
-  
+
     setLocalChatHistory(updatedChatHistory);
+    setCurrentQuestion(''); // Clear the input box after sending
+  };
+
+  const handleSamplePrompt = async (prompt: string) => {
+    setCurrentQuestion(prompt);
+    handleSendClick();
   };
 
   return (
