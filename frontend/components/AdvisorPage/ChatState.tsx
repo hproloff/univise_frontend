@@ -70,17 +70,20 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
           </Box>
         ) : (
           <List>
-            {localChatHistory.map((message, index) => (
-              <ListItem key={index} className={`chat-message ${message.type}`}>
-                {message.type === 'response' && <AndroidIcon />}
-                <ListItemText
-                  primary={<Typography className="message-text">{message.type === 'response' ? 'ADVISOR' : 'YOU'}</Typography>}
-                  secondary={<Typography className="message-text">{message.text}</Typography>}
-                />
-                {message.type === 'question' && <PersonIcon />}
-              </ListItem>
-            ))}
-          </List>
+          {localChatHistory.map((message, index) => (
+            <ListItem key={index} className={`chat-message ${message.type}`} style={{ position: 'relative' }}>
+              <Box className="message-icon">
+                {message.type === 'response' ? <AndroidIcon /> : <PersonIcon />}
+              </Box>
+              <Box className="message-text-block">
+                <Typography className="message-title">
+                  {message.type === 'response' ? 'ADVISOR' : 'YOU'}
+                </Typography>
+                <Typography className="message-content">{message.text}</Typography>
+              </Box>
+            </ListItem>
+          ))}
+        </List>
         )}
       </Box>
 

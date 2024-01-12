@@ -40,12 +40,33 @@
       max-width: 96%; /* Full width on smaller screens */
     }
   }
-  
+
   .chat-message {
-    display: flex;
     align-items: flex-start;
+    padding-bottom: 10px; /* Space out messages */
   }
   
+  .message-icon {
+    position: absolute; /* Position the icon absolutely relative to its parent */
+    left: 10px; /* Align icons with some space from the left edge */
+  }
+  
+  .message-text-block {
+    flex-direction: column;
+    margin-left: 50px; 
+  }
+  
+  .message-title, .message-content {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  /* Style for icons */
+  .chat-message .MuiListItemIcon-root {
+    min-width: auto; /* Remove the default min-width */
+    margin-right: 16px; /* Space between icon and text */
+  }
+
   .chat-message.question {
     justify-content: flex-end;
   }
@@ -66,9 +87,14 @@
   }
   
   .sample-prompt {
-    border-radius: 50px;
+    border-radius: 50px; /* Oval shape */
     padding: 10px 20px;
     text-align: center;
+    background-color: white; /* White background */
+    border: 2px solid black; /* Black border */
+    color: black; /* Black text color */
+    cursor: pointer; /* Change cursor to indicate clickability */
+    text-transform: capitalize; /* Optional: Capitalize the first letter of each word */
   }
   
   /* Ensure scrollbar extends to the header */
