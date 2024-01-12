@@ -21,6 +21,7 @@ interface ChatStateProps {
 
 const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, setCurrentQuestion }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // New state to track loading
   const [localChatHistory, setLocalChatHistory] = useState<ChatMessage[]>(chatHistory);
 
   const openPopup = () => setIsPopupOpen(true);
@@ -28,7 +29,7 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
 
   const handleSendClick = async () => {
     if (!currentQuestion.trim()) return; // Prevent sending empty messages
-
+    setIsLoading(true);
     const updatedChatHistory = [...localChatHistory, { type: 'question', text: currentQuestion }];
     setLocalChatHistory(updatedChatHistory);
 
@@ -46,6 +47,7 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
 
     setLocalChatHistory(updatedChatHistory);
     setCurrentQuestion(''); // Clear the input box after sending
+    setIsLoading(false);
   };
 
   const handleSamplePrompt = async (prompt: string) => {
@@ -92,6 +94,7 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
         setQuestion={setCurrentQuestion}
         handleSendClick={handleSendClick}
         onOpenCapabilities={openPopup}
+        isLoading={isLoading} // Pass the loading state
       />
 
       <CapabilitiesPopup open={isPopupOpen} onClose={closePopup} />

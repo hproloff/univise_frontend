@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, TextField, InputAdornment, IconButton, Button } from '@mui/material';
+import { Box, TextField, InputAdornment, IconButton, Button, CircularProgress } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import '../../styles/AdvisorPage.css'; // Import the stylesheet
 
@@ -8,9 +8,10 @@ type AdvisorFooterProps = {
   setQuestion: React.Dispatch<React.SetStateAction<string>>;
   handleSendClick: () => void;
   onOpenCapabilities: () => void; // Added prop for opening capabilities
+  isLoading: boolean; // New prop to indicate loading state
 };
 
-const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, handleSendClick, onOpenCapabilities }) => {
+const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, handleSendClick, onOpenCapabilities,isLoading  }) => {
   return (
     <Box className="advisor-footer">
       <Button 
@@ -30,12 +31,13 @@ const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, ha
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={handleSendClick} className="send-button">
-                <SendIcon />
+              <IconButton onClick={handleSendClick} className="send-button" disabled={isLoading}>
+                {isLoading ? <CircularProgress size={24} /> : <SendIcon />}
               </IconButton>
             </InputAdornment>
           ),
         }}
+        disabled={isLoading} // Disable the input field when loading
       />
     </Box>
   );

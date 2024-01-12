@@ -5,7 +5,7 @@
     flex-direction: column;
     height: calc(100vh - 30vh); /* Adjust height to account for header and footer */
     overflow-y: auto; /* Enable scrolling for the entire chat container */
-    background-color: #ffdddd; /* Light red background for the entire container */
+    background-color: #ff9797; /* Light red background for the entire container */
   }
   
   .chat-history {
@@ -14,7 +14,7 @@
     width: 100%; /* Ensure it takes the full width of the container */
     max-width: 800px; /* Specify a max-width in pixels */
     min-width: 800px; /* Ensure a minimum width of 800px */
-    background-color: #ffdddd; /* Light red background for the chat history */
+    background-color: #ff9797; /* Light red background for the chat history */
   }
   
   /* Custom scrollbar styles */
@@ -54,11 +54,13 @@
   .message-text-block {
     flex-direction: column;
     margin-left: 50px; 
+    padding-bottom: 15px;
   }
   
   .message-title, .message-content {
     font-weight: bold;
     text-align: left;
+    padding-bottom: 10px;
   }
   
   /* Style for icons */
