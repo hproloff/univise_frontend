@@ -3,8 +3,18 @@
 .chat-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    overflow-y: auto; /* Enable scrolling on the chat container */
+    height: calc(100vh - 30vh); /* Adjust height to account for header and footer */
+    overflow-y: auto; /* Enable scrolling for the entire chat container */
+    background-color: #ffdddd; /* Light red background for the entire container */
+  }
+  
+  .chat-history {
+    padding: 4px;
+    margin: 0 auto; /* Center the chat history */
+    width: 100%; /* Ensure it takes the full width of the container */
+    max-width: 800px; /* Specify a max-width in pixels */
+    min-width: 800px; /* Ensure a minimum width of 800px */
+    background-color: #ffdddd; /* Light red background for the chat history */
   }
   
   /* Custom scrollbar styles */
@@ -24,23 +34,10 @@
     background: #555;
   }
   
-  .chat-history {
-    flex-grow: 1;
-    padding: 4px;
-    margin: 0 auto; /* Center the chat history */
-    max-width: 60%; /* Maximum width of 60% */
-    max-width: 800px; /* Or specify a max-width in pixels */
-    background-color: #ffdddd;
-    margin-bottom: 15vh; /* Adjust this value to prevent overlap with the footer */
-    overflow-y: visible; /* Ensure chat history does not have its own scrollbar */
-  }
-  
-  
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .chat-history {
-      max-width: 100%; /* Full width on smaller screens */
-      padding: 4px 10px; /* Adjust padding for smaller screens */
-      margin-bottom: 15vh; /* Adjust for smaller screens if necessary */
+      min-width: 0; /* Allow it to shrink on smaller screens */
+      max-width: 96%; /* Full width on smaller screens */
     }
   }
   

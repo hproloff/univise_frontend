@@ -53,10 +53,11 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
     handleSendClick();
   };
 
-  return (
-    <Box className="chat-container">
-      <Header />
 
+  return (
+    <>
+    <Header />
+    <Box className="chat-container">
       <Box className="chat-history">
         {localChatHistory.length === 0 ? (
           <Box className="sample-prompts-container">
@@ -92,6 +93,7 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
 
       <CapabilitiesPopup open={isPopupOpen} onClose={closePopup} />
     </Box>
+    </>
   );
 };
 

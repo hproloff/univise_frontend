@@ -65,7 +65,6 @@ export default function AdvisorPage() {
         chatHistory={chatHistory}
         currentQuestion={currentQuestion}
         setCurrentQuestion={setCurrentQuestion}
-        handleSendClick={handleSendClick}
       />
     </Box>
   );
