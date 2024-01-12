@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person'; // Human icon
-import AndroidIcon from '@mui/icons-material/Android'; // Robot icon
+import { Box, Typography, List, ListItem, ListItemIcon, ListItemText, Button } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
+import AndroidIcon from '@mui/icons-material/Android';
 import Header from './Header';
 import AdvisorFooter from './AdvisorFooter';
 import CapabilitiesPopup from './CapabilitiesPopup';
+import '../../styles/ChatState.css'; // Import the new stylesheet
 
 interface ChatStateProps {
   chatHistory: { type: string, text: string }[];
@@ -20,42 +21,36 @@ const ChatState: React.FC<ChatStateProps> = ({ chatHistory, currentQuestion, set
   const closePopup = () => setIsPopupOpen(false);
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <Box className="chat-container">
       <Header />
 
-      {/* Chat history display */}
-      <Box sx={{ flexGrow: 1, overflowY: 'auto', padding: 4, marginTop: '15vh', marginBottom: '15vh' }}>
-        <List>
-          {chatHistory.map((message, index) => (
-            <ListItem key={index} sx={{
-              display: 'flex',
-              justifyContent: message.type === 'question' ? 'flex-start' : 'flex-end',
-              alignItems: 'flex-start'
-            }}>
-              {message.type === 'question' && <PersonIcon color="primary" />}
-              <ListItemText
-                primary={
-                  <Typography variant="body1" sx={{ fontWeight: 'bold', textAlign: message.type === 'question' ? 'left' : 'right' }}>
-                    {message.type === 'question' ? 'YOU' : 'ADVISOR'}
-                  </Typography>
-                }
-                secondary={
-                  <Typography sx={{ textAlign: message.type === 'question' ? 'left' : 'right' }}>
-                    {message.text}
-                  </Typography>
-                }
-              />
-              {message.type === 'response' && <AndroidIcon color="secondary" />}
-            </ListItem>
-          ))}
-        </List>
+      <Box className="chat-history">
+        {chatHistory.length === 0 ? (
+          <Box className="sample-prompts-container">
+            <Button className="sample-prompt">What classes can I take?</Button>
+            <Button className="sample-prompt">Help me plan for graduation...</Button>
+          </Box>
+        ) : (
+          <List>
+            {chatHistory.map((message, index) => (
+              <ListItem key={index} className={`chat-message ${message.type}`}>
+                {message.type === 'response' && <AndroidIcon />}
+                <ListItemText
+                  primary={<Typography className="message-text">{message.type === 'response' ? 'ADVISOR' : 'YOU'}</Typography>}
+                  secondary={<Typography className="message-text">{message.text}</Typography>}
+                />
+                {message.type === 'question' && <PersonIcon />}
+              </ListItem>
+            ))}
+          </List>
+        )}
       </Box>
 
       <AdvisorFooter
         question={currentQuestion}
         setQuestion={setCurrentQuestion}
         handleSendClick={handleSendClick}
-        onOpenCapabilities={openPopup} // Passing the prop to AdvisorFooter
+        onOpenCapabilities={openPopup}
       />
 
       <CapabilitiesPopup open={isPopupOpen} onClose={closePopup} />

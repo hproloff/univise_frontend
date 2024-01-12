@@ -1,0 +1,48 @@
+/* ChatState.css */
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 4px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+  }
+  
+  .chat-message {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .chat-message.question {
+    justify-content: flex-end;
+  }
+  
+  .chat-message.response {
+    justify-content: flex-start;
+  }
+  
+  .message-text {
+    font-weight: bold;
+  }
+  
+  .sample-prompts-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .sample-prompt {
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  /* Add additional styles as needed */
+  
