@@ -36,31 +36,29 @@ const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, ha
       >
         Capabilities
       </Button>
-      <TextField
-        fullWidth
-        variant="outlined"
-        placeholder="Ask any question ..."
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-        className={styles.advisorFooterInput} // Updated class name
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton onClick={handleSendClick} className={styles.sendButton} disabled={isLoading}>
-                {isLoading ? <CircularProgress size={24} /> : <SendIcon />}
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-        disabled={isLoading}
-      />
+
+      <Box className={styles.inputWrapper}>
+        <input
+          type="text"
+          placeholder="Ask any question ..."
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          className={styles.advisorFooterInput} 
+          disabled={isLoading}
+        />
+        <IconButton onClick={handleSendClick} className={styles.sendButton} disabled={isLoading}>
+          {isLoading ? <CircularProgress size={24} /> : <SendIcon />}
+        </IconButton>
+      </Box>
+
       <Button 
         variant="outlined" 
-        className={styles.feedbackButton} // Updated class name
+        className={styles.feedbackButton}
         onClick={handleOpenFeedback}
       >
         Feedback
       </Button>
+
       <FeedbackPopup
         open={isFeedbackPopupOpen}
         onClose={handleCloseFeedback}

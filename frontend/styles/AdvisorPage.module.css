@@ -1,129 +1,135 @@
 /* Advisor Page Background */
-
-.advisor-page {
-    background-color: #ffdddd; /* Light red background */
+.advisorPage {
+  background-color: #ffdddd; /* Light red background */
 }
 
 /* Styling for Buttons */
-.advisor-page-button {
-    border-radius: 50px; /* Very rounded, oval shape */
-    /* Add other button styles here (color, padding, border, etc.) */
+.advisorPageButton {
+  border-radius: 50px; /* Very rounded, oval shape */
+  /* Add other button styles here (color, padding, border, etc.) */
 }
 
-.advisor-footer {
-    height: 15vh;
-    display: flex;
-    align-items: center;
-    background-color: #ff9797;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0 5%;
-    box-sizing: border-box;
-    gap: 50px; 
+.advisorFooter {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  background-color: #ff9797;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 5%;
+  box-sizing: border-box;
+  gap: 50px; 
+}
+.advisorFooterInput {
+  border-radius: 50px; /* More oval shape */
+  border: 2px solid black; /* Thicker black outline */
+  background-color: white; /* White background */
+  outline: none; /* Remove outline */
+  width: 100%; /* Full width */
+  padding: 18px 16px; /* Padding for text inside input */
+  flex-grow: 1;
+  font-size: 1rem;
 }
 
-.advisor-footer-input {
-    border-radius: 50px; /* More oval shape */
-    border: 2px solid black; /* Thicker black outline */
-    background-color: white; /* White background */
-    outline: none; /* Remove outline */
-  }
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%; 
+}
 
-  .advisor-footer-input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-    border: 2px solid transparent; /* Set to transparent or match with the footer background */
-  }
-  .advisor-footer-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    border: 2px solid black; /* Maintain the border on hover */
-    border-radius: 50px; /* More oval shape */
-  }
-  .advisor-footer-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border: 2px solid black; /* Maintain the border when focused */
-  }
+.sendButton {
+  position: absolute;
+  right: 0; 
+  padding: 16px;
+}
 
-/* Header Styles */
-.advisor-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 15vh;
-    background-color: white;
-    padding: 0 2%;
-    box-sizing: border-box;
-    background-color: #ff9797; /* Light red background */
+.advisorHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 15vh;
+  background-color: white;
+  padding: 0 2%;
+  box-sizing: border-box;
+  background-color: #ff9797; /* Light red background */
+}
 
-  }
+.capabilitiesButton, .feedbackButton {
+  font-size: 1.05rem; /* Larger font size */
+  padding: 14px 22px; /* Increase padding to make the button larger */
+  font-family: 'Roboto', sans-serif;
+  background: none;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 100px; /* Make it oval-shaped */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
 
-  
-.capabilities-button, .feedback-button {
-    font-size: 1.05rem; /* Larger font size */
-    padding: 14px 22px; /* Increase padding to make the button larger */
-    font-family: 'Roboto', sans-serif;
-    background: none;
-    border: none;
-    color: black;
-    font-weight: bold;
-    border-radius: 100px; /* Make it oval-shaped */
-    transition: background-color 0.3s; /* Smooth transition for background color */
-  }
-  .capabilities-button:hover, .feedback-button:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Change as needed */
-    border-color: rgb(0, 0, 0);
-  }
+.capabilitiesButton:hover, .feedbackButton:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Change as needed */
+  border-color: rgb(0, 0, 0);
+}
 
-  /* CapabilitiesPopup Styles */
-.capabilities-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-  
-.capabilities-popup {
-    position: fixed;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
-    background-color: white;
-    border-radius: 10px;
-    z-index: 1001;
-  }
-  
-.close-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .capabilities-content {
-    padding: 2rem;
-  }
-  
-  .content-title {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .content-item {
-    text-align: center;
-  }
-  
-  .item-title {
-    font-weight: bold;
-    font-size: 1.1rem;
-  }
-  .send-button {
-    color: black; /* Set color to black */
-  }
-  .profile-icon {
-    color: black; /* Set color to black */
-    /* ... other existing styles ... */
-  }
-  .home-icon {
-    color: black; /* Set color to black */
-    /* ... other existing styles ... */
-  }
+/* CapabilitiesPopup Styles */
+.capabilitiesOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.capabilitiesPopup {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 1001;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.capabilitiesContent {
+  padding: 2rem;
+}
+
+.contentTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contentItem {
+  text-align: center;
+}
+
+.itemTitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.sendButton {
+  color: black; /* Set color to black */
+}
+
+.profileIcon {
+  color: black; /* Set color to black */
+  /* ... other existing styles ... */
+}
+
+.homeIcon {
+  color: black; /* Set color to black */
+  /* ... other existing styles ... */
+}

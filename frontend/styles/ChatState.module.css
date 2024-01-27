@@ -1,106 +1,105 @@
-/* ChatState.css */
+/* ChatState.module.css */
 
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 30vh); /* Adjust height to account for header and footer */
-    overflow-y: auto; /* Enable scrolling for the entire chat container */
-    background-color: #ff9797; /* Light red background for the entire container */
-  }
-  
-  .chat-history {
-    padding: 4px;
-    margin: 0 auto; /* Center the chat history */
-    width: 100%; /* Ensure it takes the full width of the container */
-    max-width: 800px; /* Specify a max-width in pixels */
-    min-width: 800px; /* Ensure a minimum width of 800px */
-    background-color: #ff9797; /* Light red background for the chat history */
-  }
-  
-  /* Custom scrollbar styles */
-  .chat-container::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  .chat-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  .chat-container::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  .chat-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  @media (max-width: 800px) {
-    .chat-history {
-      min-width: 0; /* Allow it to shrink on smaller screens */
-      max-width: 96%; /* Full width on smaller screens */
-    }
-  }
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 30vh);
+  overflow-y: auto;
+  background-color: #ff9797;
+}
 
-  .chat-message {
-    align-items: flex-start;
-    padding-bottom: 10px; /* Space out messages */
-  }
-  
-  .message-icon {
-    position: absolute; /* Position the icon absolutely relative to its parent */
-    left: 10px; /* Align icons with some space from the left edge */
-  }
-  
-  .message-text-block {
-    flex-direction: column;
-    margin-left: 50px; 
-    padding-bottom: 15px;
-  }
-  
-  .message-title, .message-content {
-    font-weight: bold;
-    text-align: left;
-    padding-bottom: 10px;
-  }
-  
-  /* Style for icons */
-  .chat-message .MuiListItemIcon-root {
-    min-width: auto; /* Remove the default min-width */
-    margin-right: 16px; /* Space between icon and text */
-  }
+.chatHistory {
+  padding: 4px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  min-width: 800px;
+  background-color: #ff9797;
+}
 
-  .chat-message.question {
-    justify-content: flex-end;
+/* Custom scrollbar styles */
+.chatContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chatContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.chatContainer::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.chatContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 800px) {
+  .chatHistory {
+    min-width: 0;
+    max-width: 96%;
   }
-  
-  .chat-message.response {
-    justify-content: flex-start;
-  }
-  
-  .message-text {
-    font-weight: bold;
-  }
-  
-  .sample-prompts-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .sample-prompt {
-    border-radius: 50px; /* Oval shape */
-    padding: 10px 20px;
-    text-align: center;
-    background-color: white; /* White background */
-    border: 2px solid black; /* Black border */
-    color: black; /* Black text color */
-    cursor: pointer; /* Change cursor to indicate clickability */
-    text-transform: capitalize; /* Optional: Capitalize the first letter of each word */
-  }
-  
-  /* Ensure scrollbar extends to the header */
-  .header {
-    margin-top: 0;
-  }
-  
+}
+
+.chatMessage {
+  align-items: flex-start;
+  padding-bottom: 10px;
+}
+
+.messageIcon {
+  position: absolute;
+  left: 10px;
+}
+
+.messageTextBlock {
+  flex-direction: column;
+  margin-left: 50px;
+  padding-bottom: 15px;
+}
+
+.messageTitle, .messageContent {
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+/* Style for icons */
+.chatMessage .MuiListItemIcon-root {
+  min-width: auto;
+  margin-right: 16px;
+}
+
+.chatMessage.question {
+  justify-content: flex-end;
+}
+
+.chatMessage.response {
+  justify-content: flex-start;
+}
+
+.messageText {
+  font-weight: bold;
+}
+
+.samplePromptsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.samplePrompt {
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+/* Ensure scrollbar extends to the header */
+.header {
+  margin-top: 0;
+}
