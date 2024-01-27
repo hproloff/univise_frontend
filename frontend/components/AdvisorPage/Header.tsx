@@ -12,7 +12,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = () => {
   return (
     <Box className="advisor-header">
-      <Link href="/" passHref>
+      <Link href="/about" passHref>
         <IconButton className="home-icon">
           <HomeIcon /> {/* Home icon */}
         </IconButton>
