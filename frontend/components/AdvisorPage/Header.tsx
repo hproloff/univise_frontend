@@ -3,7 +3,6 @@ import { Box, Typography, IconButton } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home'; // Home icon
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'; // Profile icon
 import Link from 'next/link';
-import '../../styles/AdvisorPage.css'; // Import the stylesheet
 
 type HeaderProps = {
   // No longer needs onOpenCapabilities

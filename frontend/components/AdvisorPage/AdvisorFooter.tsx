@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Box, TextField, InputAdornment, IconButton, Button, CircularProgress } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import '../../styles/AdvisorPage.css'; // Import the stylesheet
+import styles from '../../styles/AdvisorPage.module.css'; // Import the CSS Module
 import FeedbackPopup from './FeedbackPopup'; // Import the new component
-
 
 type AdvisorFooterProps = {
   question: string;
   setQuestion: React.Dispatch<React.SetStateAction<string>>;
   handleSendClick: () => void;
-  onOpenCapabilities: () => void; // Added prop for opening capabilities
-  isLoading: boolean; // New prop to indicate loading state
+  onOpenCapabilities: () => void;
+  isLoading: boolean;
 };
 
-const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, handleSendClick, onOpenCapabilities,isLoading  }) => {
+const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, handleSendClick, onOpenCapabilities, isLoading }) => {
   const [isFeedbackPopupOpen, setIsFeedbackPopupOpen] = useState(false);
 
   const handleOpenFeedback = () => {
@@ -26,14 +25,13 @@ const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, ha
 
   const handleSubmitFeedback = (feedback: string) => {
     console.log('Submitted Feedback:', feedback);
-    // Handle the feedback submission logic here
   };
-  
+
   return (
-    <Box className="advisor-footer">
+    <Box className={styles.advisorFooter}>
       <Button 
         variant="outlined" 
-        className="capabilities-button"
+        className={styles.capabilitiesButton}
         onClick={onOpenCapabilities}
       >
         Capabilities
@@ -44,26 +42,25 @@ const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, ha
         placeholder="Ask any question ..."
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        className="advisor-footer-input"
+        className={styles.advisorFooterInput} // Updated class name
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={handleSendClick} className="send-button" disabled={isLoading}>
+              <IconButton onClick={handleSendClick} className={styles.sendButton} disabled={isLoading}>
                 {isLoading ? <CircularProgress size={24} /> : <SendIcon />}
               </IconButton>
             </InputAdornment>
           ),
         }}
-        disabled={isLoading} // Disable the input field when loading
+        disabled={isLoading}
       />
       <Button 
         variant="outlined" 
-        className="feedback-button"
+        className={styles.feedbackButton} // Updated class name
         onClick={handleOpenFeedback}
       >
         Feedback
       </Button>
-      {/* Feedback Popup */}
       <FeedbackPopup
         open={isFeedbackPopupOpen}
         onClose={handleCloseFeedback}

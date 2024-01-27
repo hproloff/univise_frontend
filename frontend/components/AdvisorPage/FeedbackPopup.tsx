@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogActions, TextField, IconButton } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send'; // Import the send icon
-import "../../styles/Feedback.css"
+import styles from '../../styles/Feedback.module.css'; // Import the CSS Module
 
 type FeedbackPopupProps = {
   open: boolean;
@@ -19,7 +19,7 @@ const FeedbackPopup: React.FC<FeedbackPopupProps> = ({ open, onClose, onSubmitFe
   };
 
   return (
-    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md" className="feedback-popup">
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md" className={styles.feedbackPopup}>
       <DialogContent>
         <TextField
           autoFocus

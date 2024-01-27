@@ -2,31 +2,30 @@ import React from 'react';
 import { Box, Typography, List, ListItem } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import AndroidIcon from '@mui/icons-material/Android';
-import '../../styles/ChatState.css'; // Import necessary styles
+import styles from '../../styles/ChatState.module.css'; // Import the CSS Module
 
 interface ChatMessage {
-    type: string;
-    text: string;
-  }
-  
-  interface ChatHistoryProps {
-    chatHistory: ChatMessage[];
-  }
+  type: string;
+  text: string;
+}
 
+interface ChatHistoryProps {
+  chatHistory: ChatMessage[];
+}
 
-  const ChatHistory: React.FC<ChatHistoryProps> = ({ chatHistory }) => {
-    return (
+const ChatHistory: React.FC<ChatHistoryProps> = ({ chatHistory }) => {
+  return (
     <List>
       {chatHistory.map((message, index) => (
-        <ListItem key={index} className={`chat-message ${message.type}`} style={{ position: 'relative' }}>
-          <Box className="message-icon">
+        <ListItem key={index} className={`${styles.chatMessage} ${styles[message.type]}`} style={{ position: 'relative' }}>
+          <Box className={styles.messageIcon}>
             {message.type === 'response' ? <AndroidIcon /> : <PersonIcon />}
           </Box>
-          <Box className="message-text-block">
-            <Typography className="message-title">
+          <Box className={styles.messageTextBlock}>
+            <Typography className={styles.messageTitle}>
               {message.type === 'response' ? 'ADVISOR' : 'YOU'}
             </Typography>
-            <Typography className="message-content">{message.text}</Typography>
+            <Typography className={styles.messageContent}>{message.text}</Typography>
           </Box>
         </ListItem>
       ))}
