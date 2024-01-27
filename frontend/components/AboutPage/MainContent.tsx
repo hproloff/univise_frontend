@@ -36,7 +36,7 @@ const MainContent = () => {
             },
           }}
         >
-          Meet Your Advisor
+          Back to Advisor
         </Button>
       </Link>
     </Box>

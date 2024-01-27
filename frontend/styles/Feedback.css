@@ -1,0 +1,13 @@
+.feedback-popup .MuiDialog-paper {
+    border: 1px solid black; /* Black border for the popup */
+}
+
+/* Style for the TextField and other elements inside the popup */
+.feedback-popup .MuiInputBase-root, 
+.feedback-popup .MuiFormLabel-root {
+    color: black; /* Black text color */
+}
+
+.feedback-popup .MuiIconButton-root {
+    color: black; /* Black color for the IconButton */
+}

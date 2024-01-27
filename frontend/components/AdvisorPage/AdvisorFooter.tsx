@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Box, TextField, InputAdornment, IconButton, Button, CircularProgress } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import '../../styles/AdvisorPage.css'; // Import the stylesheet
+import FeedbackPopup from './FeedbackPopup'; // Import the new component
+
 
 type AdvisorFooterProps = {
   question: string;
@@ -12,6 +14,21 @@ type AdvisorFooterProps = {
 };
 
 const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, handleSendClick, onOpenCapabilities,isLoading  }) => {
+  const [isFeedbackPopupOpen, setIsFeedbackPopupOpen] = useState(false);
+
+  const handleOpenFeedback = () => {
+    setIsFeedbackPopupOpen(true);
+  };
+
+  const handleCloseFeedback = () => {
+    setIsFeedbackPopupOpen(false);
+  };
+
+  const handleSubmitFeedback = (feedback: string) => {
+    console.log('Submitted Feedback:', feedback);
+    // Handle the feedback submission logic here
+  };
+  
   return (
     <Box className="advisor-footer">
       <Button 
@@ -38,6 +55,19 @@ const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, ha
           ),
         }}
         disabled={isLoading} // Disable the input field when loading
+      />
+      <Button 
+        variant="outlined" 
+        className="feedback-button"
+        onClick={handleOpenFeedback}
+      >
+        Feedback
+      </Button>
+      {/* Feedback Popup */}
+      <FeedbackPopup
+        open={isFeedbackPopupOpen}
+        onClose={handleCloseFeedback}
+        onSubmitFeedback={handleSubmitFeedback}
       />
     </Box>
   );
