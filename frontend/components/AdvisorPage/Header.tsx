@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home'; // Home icon
+import InfoIcon from '@mui/icons-material/Info'; // Home icon
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'; // Profile icon
 import Link from 'next/link';
 import styles from '../../styles/AdvisorPage.module.css'; // Import the CSS Module
@@ -14,12 +14,12 @@ const Header: React.FC<HeaderProps> = () => {
     <Box className={styles.advisorHeader}>
       <Link href="/about" passHref>
         <IconButton className={styles.homeIcon}>
-          <HomeIcon /> {/* Home icon */}
+          <InfoIcon /> 
         </IconButton>
       </Link>
 
       <Typography variant="h4" className={styles.headerTitle}>
-        Univise-0.1.0
+        Univise-0.1.4
       </Typography>
 
       <IconButton className={styles.profileIcon}>

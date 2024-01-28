@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, TextField, InputAdornment, IconButton, Button, CircularProgress } from '@mui/material';
+import { Box, TextField, Typography, IconButton, Button, CircularProgress } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import styles from '../../styles/AdvisorPage.module.css'; // Import the CSS Module
 import FeedbackPopup from './FeedbackPopup'; // Import the new component
@@ -28,7 +28,7 @@ const AdvisorFooter: React.FC<AdvisorFooterProps> = ({ question, setQuestion, ha
   };
 
   return (
-    <Box className={styles.advisorFooter}>
+      <Box className={styles.advisorFooter}>
       <Button 
         variant="outlined" 
         className={styles.capabilitiesButton}

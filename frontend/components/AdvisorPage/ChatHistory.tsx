@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, List, ListItem } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-import AndroidIcon from '@mui/icons-material/Android';
+import ComputerIcon from '@mui/icons-material/Memory';
 import styles from '../../styles/ChatState.module.css'; // Import the CSS Module
 
 interface ChatMessage {
@@ -19,7 +19,7 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({ chatHistory }) => {
       {chatHistory.map((message, index) => (
         <ListItem key={index} className={`${styles.chatMessage} ${styles[message.type]}`} style={{ position: 'relative' }}>
           <Box className={styles.messageIcon}>
-            {message.type === 'response' ? <AndroidIcon /> : <PersonIcon />}
+            {message.type === 'response' ? <ComputerIcon /> : <PersonIcon />}
           </Box>
           <Box className={styles.messageTextBlock}>
             <Typography className={styles.messageTitle}>
