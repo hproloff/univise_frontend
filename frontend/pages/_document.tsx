@@ -5,8 +5,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/public/favicon.png" />
-          {/* Other head tags */}
+          <link rel="icon" href="/favicon.png" />
+          <title>Univise - Advisor</title>
         </Head>
         <body>
           <Main />

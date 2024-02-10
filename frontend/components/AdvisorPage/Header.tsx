@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <Box className={styles.advisorHeader}>
       <Link href="/about" passHref>
-        <IconButton className={styles.homeIcon}>
+        <IconButton className={styles.infoIcon}>
           <InfoIcon /> 
         </IconButton>
       </Link>
