@@ -6,7 +6,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon.png" />
-          <title>Univise - Advisor</title>
         </Head>
         <body>
           <Main />

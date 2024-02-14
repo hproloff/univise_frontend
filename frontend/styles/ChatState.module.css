@@ -81,24 +81,6 @@
   font-weight: bold;
 }
 
-.samplePromptsContainer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.samplePrompt {
-  border-radius: 50px;
-  padding: 10px 20px;
-  text-align: center;
-  background-color: white;
-  border: 2px solid black;
-  color: black;
-  cursor: pointer;
-  text-transform: capitalize;
-}
-
 /* Ensure scrollbar extends to the header */
 .header {
   margin-top: 0;

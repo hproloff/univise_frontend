@@ -13,17 +13,17 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <Box className={styles.advisorHeader}>
       <Link href="/about" passHref>
-        <IconButton className={styles.infoIcon}>
-          <InfoIcon /> 
+        <IconButton className={styles.homeIcon}>
+          <InfoIcon style={{ color: 'black' }}/> 
         </IconButton>
       </Link>
 
       <Typography variant="h4" className={styles.headerTitle}>
-        Univise-0.1.4
+        Univise-0.1.5
       </Typography>
 
       <IconButton className={styles.profileIcon}>
-        <AccountCircleIcon /> {/* Profile icon */}
+        <AccountCircleIcon style={{ color: 'black' }} /> 
       </IconButton>
     </Box>
   );

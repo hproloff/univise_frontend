@@ -100,6 +100,10 @@
   position: absolute;
   top: 0;
   right: 0;
+  color: black;
+  background: transparent; /* Set background to transparent */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer to indicate clickability */
 }
 
 .capabilitiesContent {
@@ -129,7 +133,7 @@
   /* ... other existing styles ... */
 }
 
-.infoIcon {
+.homeIcon {
   color: black; /* Set color to black */
   /* ... other existing styles ... */
 }

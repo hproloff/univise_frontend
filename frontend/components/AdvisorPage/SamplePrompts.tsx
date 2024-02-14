@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Button } from '@mui/material';
-import styles from '../../styles/ChatState.module.css'; // Import the CSS Module
 
 interface SamplePromptsProps {
   onSamplePrompt: (prompt: string) => void;
@@ -8,12 +7,12 @@ interface SamplePromptsProps {
 
 const SamplePrompts: React.FC<SamplePromptsProps> = ({ onSamplePrompt }) => {
   return (
-    <Box className={styles.samplePromptsContainer}> {/* Updated class name */}
-      <Button className={styles.samplePrompt} onClick={() => onSamplePrompt("What are some good literature electives?")}>
-        What are some good literature electives? 
+    <Box style={{ display: 'flex', justifyContent: 'center', gap: '20px', padding: '20px' }}>
+      <Button style={{ width: '400px' , borderRadius: '50px', padding: '8px 16px', textAlign: 'center', backgroundColor: 'white', border: '2px solid black', color: 'black', cursor: 'pointer', textTransform: 'capitalize' }} onClick={() => onSamplePrompt("What are some good literature electives?")}>
+        Easy literature electives? 
       </Button>
-      <Button className={styles.samplePrompt} onClick={() => onSamplePrompt("Help me plan for graduation...")}>
-        Help me plan for graduation...
+      <Button style={{ width: '400px', borderRadius: '50px', padding: '8px 16px', textAlign: 'center', backgroundColor: 'white', border: '2px solid black', color: 'black', cursor: 'pointer', textTransform: 'capitalize' }} onClick={() => onSamplePrompt("Help me plan for graduation...")}>
+        Help me plan for graduation
       </Button>
     </Box>
   );
