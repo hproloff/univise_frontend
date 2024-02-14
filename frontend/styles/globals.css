@@ -4,4 +4,9 @@ body {
   margin: 0;
   width: 100%;
   box-sizing: border-box;
+  background-color: #ff0000;
+}
+
+body {
+  min-height: 100vh; /* Ensure body takes at least the full height of the viewport */
 }
