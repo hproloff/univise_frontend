@@ -19,10 +19,16 @@ const AdvisorFooter: React.FC<AdvisorFooterProps> = ({
   isLoading,
 }) => {
   const googleFormUrl = 'https://forms.gle/3Rmtpv7u4AFHpwi7A';
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
+    // Set the initial value once the component is mounted
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
