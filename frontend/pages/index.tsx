@@ -61,11 +61,7 @@ export default function AdvisorPage() {
 
   return (
     <>
-      <div>
-        <head>
-          <title>Univise Advisor</title>
-        </head>
-      </div>
+      <title>Univise Advisor</title>
 
       <Box sx={{ padding: 0, margin: 0, width: '100%', boxSizing: 'border-box' }}>
         <ChatState

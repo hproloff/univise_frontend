@@ -6,15 +6,13 @@ import Footer from '@/components/AboutPage/Footer';
 
 export default function Page() {
   return (
-    <div>
-      <head>
+    <>
         <title>Univise - About</title>
-      </head>
       <MainContent />
       <OurStory />
       <Features />
       <Functionality />
       <Footer />
-    </div>
+    </>
   );
 }
